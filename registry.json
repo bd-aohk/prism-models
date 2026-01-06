@@ -1,0 +1,153 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-01-06T00:00:00Z",
+  "repository": "https://github.com/bd-aohk/prism-models",
+  "models": {
+    "panel-detection": {
+      "id": "panel-detection",
+      "name": "Panel Detection",
+      "description": "Comic panel layout detection and boundary identification",
+      "category": "detection",
+      "required": true,
+      "versions": {
+        "v1.0": {
+          "filename": "comic-panel-detection.pt",
+          "size_bytes": 47185920,
+          "size_display": "45 MB",
+          "url": "https://github.com/bd-aohk/prism-models/releases/download/v1.0.0/comic-panel-detection.pt",
+          "checksum": "sha256:placeholder_checksum_panel_detection",
+          "hardware_compatibility": ["cpu", "apple-silicon", "nvidia-gpu", "amd-gpu"],
+          "framework": "pytorch",
+          "min_memory_gb": 1
+        }
+      },
+      "latest_version": "v1.0"
+    },
+    "llava-1.5-7b": {
+      "id": "llava-1.5-7b",
+      "name": "LLaVA 1.5 7B",
+      "description": "Large Language and Vision Assistant for visual analysis and appearance descriptions",
+      "category": "vision-language",
+      "required": true,
+      "versions": {
+        "q4_k": {
+          "filename": "llava-v1.5-7b-q4_k.gguf",
+          "size_bytes": 4380000000,
+          "size_display": "4.08 GB",
+          "url": "https://github.com/bd-aohk/prism-models/releases/download/v1.0.0/llava-v1.5-7b-q4_k.gguf",
+          "checksum": "sha256:placeholder_checksum_llava_7b",
+          "hardware_compatibility": ["apple-silicon", "nvidia-gpu", "amd-gpu", "cpu"],
+          "framework": "llama-cpp",
+          "min_memory_gb": 8,
+          "quantization": "Q4_K"
+        }
+      },
+      "latest_version": "q4_k"
+    },
+    "llava-vision": {
+      "id": "llava-vision",
+      "name": "LLaVA Vision Model",
+      "description": "Vision processing component for LLaVA multimodal analysis",
+      "category": "vision",
+      "required": true,
+      "versions": {
+        "f16": {
+          "filename": "mmproj-model-f16.gguf",
+          "size_bytes": 654311424,
+          "size_display": "624 MB",
+          "url": "https://github.com/bd-aohk/prism-models/releases/download/v1.0.0/mmproj-model-f16.gguf",
+          "checksum": "sha256:placeholder_checksum_vision",
+          "hardware_compatibility": ["apple-silicon", "nvidia-gpu", "amd-gpu", "cpu"],
+          "framework": "llama-cpp",
+          "min_memory_gb": 2
+        }
+      },
+      "latest_version": "f16"
+    },
+    "sam2": {
+      "id": "sam2",
+      "name": "SAM 2",
+      "description": "Segment Anything Model 2 for high-quality image segmentation",
+      "category": "segmentation",
+      "required": true,
+      "versions": {
+        "small": {
+          "filename": "sam2_s.pt",
+          "size_bytes": 249561088,
+          "size_display": "238 MB",
+          "url": "https://github.com/bd-aohk/prism-models/releases/download/v1.0.0/sam2_s.pt",
+          "checksum": "sha256:placeholder_checksum_sam2_small",
+          "hardware_compatibility": ["cpu"],
+          "framework": "pytorch",
+          "min_memory_gb": 4,
+          "performance_tier": "efficient"
+        },
+        "base-plus": {
+          "filename": "sam2_b_plus.pt",
+          "size_bytes": 704643072,
+          "size_display": "672 MB",
+          "url": "https://github.com/bd-aohk/prism-models/releases/download/v1.0.0/sam2_b_plus.pt",
+          "checksum": "sha256:placeholder_checksum_sam2_base",
+          "hardware_compatibility": ["apple-silicon", "nvidia-gpu"],
+          "framework": "pytorch",
+          "min_memory_gb": 8,
+          "performance_tier": "balanced"
+        },
+        "large": {
+          "filename": "sam2_l.pt",
+          "size_bytes": 1257291776,
+          "size_display": "1.2 GB",
+          "url": "https://github.com/bd-aohk/prism-models/releases/download/v1.0.0/sam2_l.pt",
+          "checksum": "sha256:placeholder_checksum_sam2_large",
+          "hardware_compatibility": ["amd-gpu", "nvidia-gpu"],
+          "framework": "pytorch",
+          "min_memory_gb": 16,
+          "performance_tier": "maximum"
+        }
+      },
+      "latest_version": "base-plus"
+    }
+  },
+  "hardware_profiles": {
+    "apple-silicon": {
+      "name": "Apple Silicon",
+      "recommended_models": {
+        "panel-detection": "v1.0",
+        "llava-1.5-7b": "q4_k",
+        "llava-vision": "f16",
+        "sam2": "base-plus"
+      },
+      "total_size_display": "5.4 GB"
+    },
+    "nvidia-gpu": {
+      "name": "NVIDIA GPU",
+      "recommended_models": {
+        "panel-detection": "v1.0",
+        "llava-1.5-7b": "q4_k",
+        "llava-vision": "f16",
+        "sam2": "base-plus"
+      },
+      "total_size_display": "5.4 GB"
+    },
+    "amd-gpu": {
+      "name": "AMD GPU",
+      "recommended_models": {
+        "panel-detection": "v1.0",
+        "llava-1.5-7b": "q4_k",
+        "llava-vision": "f16",
+        "sam2": "large"
+      },
+      "total_size_display": "6.0 GB"
+    },
+    "cpu": {
+      "name": "CPU Only",
+      "recommended_models": {
+        "panel-detection": "v1.0",
+        "llava-1.5-7b": "q4_k",
+        "llava-vision": "f16",
+        "sam2": "small"
+      },
+      "total_size_display": "4.9 GB"
+    }
+  }
+}
