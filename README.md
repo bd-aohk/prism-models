@@ -10,6 +10,10 @@ This repository contains the model registry and configuration files that tell th
 
 ### Core Models (Always Required)
 - **Panel Detection** (45 MB) - Comic panel layout detection and boundary identification
+  - **Source**: Fine-tuned YOLOv8 by [mosesb/best-comic-panel-detection](https://huggingface.co/mosesb/best-comic-panel-detection)
+  - **HuggingFace**: [mosesb/best-comic-panel-detection](https://huggingface.co/mosesb/best-comic-panel-detection)
+  - **License**: GPL-3.0
+  - **Training**: Specialized for comic book panel detection
 - **LLaVA 1.5 7B** (4.08 GB) - Large Language and Vision Assistant for visual analysis
 - **LLaVA Vision Model** (624 MB) - Vision processing component for multimodal analysis
 

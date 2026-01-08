@@ -6,9 +6,14 @@
     "panel-detection": {
       "id": "panel-detection",
       "name": "Panel Detection",
-      "description": "Comic panel layout detection and boundary identification",
+      "description": "Comic panel layout detection and boundary identification - Fine-tuned YOLOv8 model",
       "category": "detection",
       "required": true,
+      "source": {
+        "huggingface": "mosesb/best-comic-panel-detection",
+        "license": "GPL-3.0",
+        "original_url": "https://huggingface.co/mosesb/best-comic-panel-detection/resolve/main/best.pt"
+      },
       "versions": {
         "v1.0": {
           "filename": "comic-panel-detection.pt",
@@ -29,6 +34,12 @@
       "description": "Large Language and Vision Assistant for visual analysis and appearance descriptions",
       "category": "vision-language",
       "required": true,
+      "source": {
+        "original": "LLaVA 1.5 7B by Haotian Liu et al.",
+        "quantized_by": "TheBloke/mys",
+        "license": "Apache 2.0",
+        "original_url": "https://huggingface.co/mys/ggml_llava-v1.5-7b/resolve/main/ggml-model-q4_k.gguf"
+      },
       "versions": {
         "q4_k": {
           "filename": "llava-v1.5-7b-q4_k.gguf",
@@ -50,6 +61,12 @@
       "description": "Vision processing component for LLaVA multimodal analysis",
       "category": "vision",
       "required": true,
+      "source": {
+        "original": "LLaVA 1.5 Vision Model",
+        "quantized_by": "TheBloke/mys",
+        "license": "Apache 2.0",
+        "original_url": "https://huggingface.co/mys/ggml_llava-v1.5-7b/resolve/main/mmproj-model-f16.gguf"
+      },
       "versions": {
         "f16": {
           "filename": "mmproj-model-f16.gguf",
@@ -70,6 +87,16 @@
       "description": "Segment Anything Model 2 for high-quality image segmentation",
       "category": "segmentation",
       "required": true,
+      "source": {
+        "original": "Meta's Segment Anything 2",
+        "license": "Apache 2.0",
+        "repository": "https://github.com/facebookresearch/segment-anything-2",
+        "original_urls": {
+          "small": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_small.pt",
+          "base_plus": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_base_plus.pt",
+          "large": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt"
+        }
+      },
       "versions": {
         "small": {
           "filename": "sam2_s.pt",
